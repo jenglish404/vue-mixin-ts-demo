@@ -1,6 +1,6 @@
 # vue-mixin-ts-demo
 
-A minimal demo app to demonstrate a TypeScript issue with [vue-class-component](https://github.com/vuejs/vue-class-component) and Mixins (see [issue #426](https://github.com/vuejs/vue-class-component/issues/452)). This is okay with vue-class-component v7.2.3, but unhappy with v7.2.5.
+A minimal demo app to demonstrate a TypeScript issue with [vue-class-component](https://github.com/vuejs/vue-class-component) and Mixins (see [issue #452](https://github.com/vuejs/vue-class-component/issues/452)). This is okay with vue-class-component v7.2.3, but unhappy with v7.2.5.
 
 Using a typed declaration like:
 
