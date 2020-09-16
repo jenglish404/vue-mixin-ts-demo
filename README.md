@@ -1,6 +1,6 @@
 # vue-mixin-ts-demo
 
-A minimal demo app to demonstrate a TypeScript issue with [vue-class-component](https://github.com/vuejs/vue-class-component) and Mixins.
+A minimal demo app to demonstrate a TypeScript issue with [vue-class-component](https://github.com/vuejs/vue-class-component) and Mixins. This is okay with vue-class-component v7.2.3, but unhappy with v7.2.5.
 
 Using a typed declaration like:
 
@@ -30,7 +30,31 @@ ERROR in vue-mixin-ts-demo/src/components/HelloWorld.vue(40,48):
 Version: typescript 4.0.2
 ```
 
-This is okay with vue-class-component v7.2.3, but unhappy with v7.2.5.
+If you're not including multiple Mixins, it's okay:
+
+```
+@Component
+export default class HelloWorld extends Mixins<AnimalMixin<Cat>>(
+  AnimalMixin,
+  UtilsMixin
+) {
+  ...
+}
+```
+
+If you're not using a typed Mixin declaration, it's okay:
+
+```
+@Component
+export default class HelloWorld extends Mixins(
+  SomeOtherMixin,
+  UtilsMixin
+) {
+  ...
+}
+```
+
+It's the combination of the two that appears to have a missing type definition.
 
 ## Project setup
 
