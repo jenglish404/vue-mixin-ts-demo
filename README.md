@@ -1,10 +1,10 @@
 # vue-mixin-ts-demo
 
-A minimal demo app to demonstrate a TypeScript issue with [vue-class-component](https://github.com/vuejs/vue-class-component) and Mixins. This is okay with vue-class-component v7.2.3, but unhappy with v7.2.5.
+A minimal demo app to demonstrate a TypeScript issue with [vue-class-component](https://github.com/vuejs/vue-class-component) and Mixins (see [issue #426](https://github.com/vuejs/vue-class-component/issues/452)). This is okay with vue-class-component v7.2.3, but unhappy with v7.2.5.
 
 Using a typed declaration like:
 
-```
+```javascript
 @Component
 export default class HelloWorld extends Mixins<AnimalMixin<Cat>>(
   AnimalMixin,
@@ -32,7 +32,7 @@ Version: typescript 4.0.2
 
 If you're not including multiple Mixins, it's okay:
 
-```
+```javascript
 @Component
 export default class HelloWorld extends Mixins<AnimalMixin<Cat>>(
   AnimalMixin
@@ -43,7 +43,7 @@ export default class HelloWorld extends Mixins<AnimalMixin<Cat>>(
 
 If you're not using a typed Mixin declaration, it's okay:
 
-```
+```javascript
 @Component
 export default class HelloWorld extends Mixins(
   SomeOtherMixin,
