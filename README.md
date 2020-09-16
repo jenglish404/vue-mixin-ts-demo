@@ -35,8 +35,7 @@ If you're not including multiple Mixins, it's okay:
 ```
 @Component
 export default class HelloWorld extends Mixins<AnimalMixin<Cat>>(
-  AnimalMixin,
-  UtilsMixin
+  AnimalMixin
 ) {
   ...
 }
